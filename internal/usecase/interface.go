@@ -6,5 +6,6 @@ type Provider interface {
 	GetQuestion() (*entities.Question, error)
 
 	UpdateScore(int) error
+	SetZeroScore() error
 	GetScore() (int, error)
 }
