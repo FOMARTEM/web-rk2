@@ -2,17 +2,18 @@ package main
 
 import (
 	"flag"
+	"log"
+
 	"github.com/ValeryBMSTU/web-rk2/internal/api"
 	"github.com/ValeryBMSTU/web-rk2/internal/config"
 	"github.com/ValeryBMSTU/web-rk2/internal/provider"
 	"github.com/ValeryBMSTU/web-rk2/internal/usecase"
 	_ "github.com/lib/pq"
-	"log"
 )
 
 func main() {
 	// Считываем аргументы командной строки
-	configPath := flag.String("config-path", "./configs/example.yaml", "путь к файлу конфигурации")
+	configPath := flag.String("config-path", "./configs/config.yaml", "путь к файлу конфигурации")
 	flag.Parse()
 
 	cfg, err := config.LoadConfig(*configPath)
